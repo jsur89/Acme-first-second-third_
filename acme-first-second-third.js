@@ -6,10 +6,28 @@ const users = [
   { id: 4, name: "lucy", slot: "third", selected: true },
 ];
 
-const firstBox = document.getElementById("first");
-const secondBox = document.getElementById("second");
-const thirdBox = document.getElementById("third");
+const firstBox = document.getElementById("first-list");
+const secondBox = document.getElementById("second-list");
+const thirdBox = document.getElementById("third-list");
 
+function renderUsers() {
+  for (let i = 0; i < users.length; i++) {
+    // let userSlot = users.slot
+    const user = document.createElement("li");
+    user.innerHTML = users[i].name;
+    user.id = users[i].id;
+    if (users[i].slot === "first") {
+      firstBox.appendChild(user);
+    }
+    if (users[i].slot === "second") {
+      secondBox.appendChild(user);
+    }
+    if (users[i].slot === "third") {
+      thirdBox.appendChild(user);
+    }
+  }
+}
+renderUsers();
 /*My Notes when you first hit the page, data should be  interpreted and injected
 into the site. 
 
