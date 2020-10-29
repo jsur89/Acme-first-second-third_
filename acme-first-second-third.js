@@ -72,11 +72,11 @@ lists.addEventListener("click", (event) => {
     const nextParent = parentNode.nextElementSibling;
     //variable for parents previous sibling
     const previousParent = parentNode.previousElementSibling;
-    //array of all siblings in the buttons box
-    const boxChildren = [...event.target.parentElement.children];
+    //array of all siblings in the buttons list
+    const listChildren = [...event.target.parentElement.children];
 
-    //for each sibling (or children of the box with the button tag)
-    boxChildren.forEach((child) => {
+    //for each sibling (or children of the list with the button tag)
+    listChildren.forEach((child) => {
       if (child.nodeName === "LI" && child.className === "selected") {
         //rename the slot of each user to the next or previous parents id# name
         if (event.target.className === "move-right") {
